@@ -121,6 +121,26 @@ The project achieved the following recorded results:
 
 These results highlight why test performance and class-wise recall must be considered alongside overall accuracy.
 
+### 📈 Model Visualisations
+
+#### 1. Dataset Class Distribution
+
+This chart shows the distribution of MRI images across the four classification categories.
+
+![Dataset Class Distribution](outputs/class_distribution.png)
+
+#### 2. Confusion Matrix
+
+The confusion matrix illustrates the model's correct and incorrect predictions across the four classes.
+
+![Confusion Matrix](outputs/confusion_matrix.png)
+
+#### 3. Training and Validation Curves
+
+These curves show how the model's training and validation performance changed across epochs.
+
+![Training and Validation Curves](outputs/training_curves.png)
+
 ## ⚠️ Limitations
 
 - The model's test accuracy is lower than its validation accuracy.
