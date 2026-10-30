@@ -202,9 +202,25 @@ pip install -r requirements.txt
 
 ### Run the Notebook
 
-Open the project notebook in Jupyter Notebook or JupyterLab.
+The project notebook is available in the notebooks/ directory.
 
-Download the dataset from the Kaggle link above and configure the dataset paths in the notebook to match your local folder structure. The notebook was originally developed in a Kaggle environment.
+Notebook: NeuroScan_Brain_Tumor_Classification.ipynb
+
+Steps to Run
+
+Clone the repository and navigate to the project directory.
+
+Install the required Python libraries using pip install -r requirements.txt.
+
+Download the MRI dataset from the Kaggle dataset page.
+
+Open the notebook using Jupyter Notebook or JupyterLab.
+
+Update the dataset paths in the notebook to match your local dataset location.
+
+Run the notebook cells in order.
+
+Note: The notebook was originally developed in a Kaggle environment. Depending on your local setup, you may need to adjust the dataset paths and configure PyTorch for your available hardware.
 
 ## 🔮 Future Improvements
 
