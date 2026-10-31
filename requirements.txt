@@ -9,3 +9,6 @@ Pillow
 jupyter
 kagglehub
 tqdm
+Flask
+flask-cors
+gunicorn
