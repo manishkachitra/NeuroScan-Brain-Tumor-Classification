@@ -5,6 +5,31 @@
 The project explores image preprocessing, data augmentation, model training, and evaluation to understand how deep-learning techniques can be applied to medical image classification.
 
 > **Disclaimer:** This is an academic project for educational and research purposes only. It is not intended for medical diagnosis or clinical decision-making.
+>
+> <p align="center">
+  <a href="https://neuroscan-brain-tumor-classification-rigbfpnpugwor7n3crhpnb.streamlit.app">
+    <img src="https://static.streamlit.io/badges/streamlit_badge_black_white.svg" alt="Streamlit App" height="38"/>
+  </a>
+  <a href="https://neuroscan-brain-tumor-classification-rigbfpnpugwor7n3crhpnb.streamlit.app">
+    <img src="https://img.shields.io/badge/Live%20Demo-Streamlit%20Cloud-FF4B4B?style=for-the-badge&logo=Streamlit&logoColor=white" alt="Live Demo"/>
+  </a>
+</p>
+
+<p align="center">
+  🚀 <b>Live Interactive Dashboard:</b> 
+  <a href="https://neuroscan-brain-tumor-classification-rigbfpnpugwor7n3crhpnb.streamlit.app">
+    <b>neuroscan-brain-tumor-classification.streamlit.app</b>
+  </a>
+</p>
+
+---
+
+> ### 🌐 Live Web Demo
+> Test the interactive MRI classifier directly in your browser:  
+> 👉 **[Launch NeuroScan Clinical Dashboard](https://neuroscan-brain-tumor-classification-rigbfpnpugwor7n3crhpnb.streamlit.app)**  
+> *(No installation needed — upload any brain MRI slice or choose a preset sample to classify!)*
+
+---
 
 ## 📌 Table of Contents
 
