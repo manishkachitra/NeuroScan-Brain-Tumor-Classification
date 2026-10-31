@@ -141,6 +141,12 @@ These curves show how the model's training and validation performance changed ac
 
 ![Training and Validation Curves](outputs/training_curves.png)
 
+📄 Project Report
+
+The complete project report, including the project methodology and documentation, is available below.
+
+📘 View NeuroScan Project Report (PDF)
+
 ## ⚠️ Limitations
 
 - The model's test accuracy is lower than its validation accuracy.
