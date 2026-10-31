@@ -1,0 +1,170 @@
+:root {
+  --bg: #12171c;
+  --panel: #1a2128;
+  --line: #2c3640;
+  --text: #e6ebef;
+  --muted: #8d9ba7;
+  --accent: #7fc4d9;      /* cool light-box blue */
+  --accent-ink: #0b1a20;
+  --warn: #e9b44c;
+  --ok: #8fd19e;
+  --radius: 6px;
+  font-family: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+html, body { margin: 0; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.55;
+  padding: 2.5rem 1.25rem 3rem;
+  min-height: 100vh;
+}
+
+.top, .workspace { max-width: 960px; margin: 0 auto; }
+
+.top h1 {
+  margin: 0 0 .25rem;
+  font-size: 2rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+.top p { margin: 0 0 2rem; color: var(--muted); max-width: 52ch; }
+
+.workspace {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  gap: 2rem;
+  align-items: start;
+}
+
+/* ---------- Viewer ---------- */
+.dropzone {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  background: #000;
+  border: 1px dashed var(--line);
+  border-radius: var(--radius);
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  cursor: pointer;
+  transition: border-color .15s;
+}
+.dropzone:hover, .dropzone.drag, .dropzone:focus-visible {
+  border-color: var(--accent);
+  outline: none;
+}
+.dropzone.has-image { border-style: solid; }
+
+.dropzone img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.drop-hint {
+  display: flex;
+  flex-direction: column;
+  gap: .25rem;
+  text-align: center;
+  padding: 1rem;
+  color: var(--muted);
+}
+.drop-hint strong { color: var(--text); font-weight: 500; }
+
+/* single scan sweep while the model runs */
+.scanline {
+  position: absolute;
+  left: 0; right: 0; top: 0;
+  height: 2px;
+  background: var(--accent);
+  box-shadow: 0 0 14px 2px rgba(127, 196, 217, .6);
+  animation: sweep 1.1s ease-in-out infinite alternate;
+}
+@keyframes sweep { to { top: calc(100% - 2px); } }
+
+.actions { display: flex; gap: .75rem; margin-top: 1rem; }
+
+.btn {
+  font: inherit;
+  font-weight: 500;
+  padding: .6rem 1.1rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--line);
+  background: transparent;
+  color: var(--text);
+  cursor: pointer;
+}
+.btn:hover:not(:disabled) { border-color: var(--accent); }
+.btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.btn:disabled { opacity: .4; cursor: not-allowed; }
+.btn.primary {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--accent-ink);
+}
+
+/* ---------- Results ---------- */
+.results {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+}
+
+.status { margin: 0 0 1rem; color: var(--muted); }
+.status.error { color: var(--warn); }
+
+.label { margin: 0; font-size: .85rem; color: var(--muted); }
+
+#topClass {
+  margin: .15rem 0 0;
+  font-size: 1.75rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+.conf { margin: 0 0 1rem; color: var(--accent); font-weight: 500; }
+
+.warning {
+  margin: 0 0 1.25rem;
+  padding: .65rem .8rem;
+  border-left: 3px solid var(--warn);
+  background: rgba(233, 180, 76, .08);
+  font-size: .9rem;
+}
+
+.bars { list-style: none; margin: 0 0 1.5rem; padding: 0; display: grid; gap: .9rem; }
+.bars li { display: grid; gap: .3rem; }
+.bar-head { display: flex; justify-content: space-between; font-size: .92rem; }
+.bar-head span:last-child { color: var(--muted); font-variant-numeric: tabular-nums; }
+.track { height: 6px; background: var(--line); border-radius: 3px; overflow: hidden; }
+.fill {
+  height: 100%;
+  width: 0;
+  background: var(--muted);
+  border-radius: 3px;
+  transition: width .5s ease;
+}
+.bars li.top .fill { background: var(--accent); }
+
+.disclaimer {
+  margin: 0;
+  padding-top: 1rem;
+  border-top: 1px solid var(--line);
+  font-size: .8rem;
+  color: var(--muted);
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 760px) {
+  .workspace { grid-template-columns: 1fr; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scanline { animation: none; top: 50%; }
+  .fill { transition: none; }
+}

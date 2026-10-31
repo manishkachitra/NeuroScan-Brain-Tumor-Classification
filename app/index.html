@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>NeuroScan – Brain MRI Classifier</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="top">
+    <h1>NeuroScan</h1>
+    <p>Upload a brain MRI slice and the model will sort it into one of four categories.</p>
+  </header>
+
+  <main class="workspace">
+    <!-- Left: image viewer -->
+    <section class="viewer" aria-label="MRI image">
+      <div id="dropzone" class="dropzone" tabindex="0" role="button"
+           aria-label="Choose or drop an MRI image">
+        <img id="preview" alt="Uploaded MRI scan" hidden />
+        <div id="dropHint" class="drop-hint">
+          <strong>Drop an MRI image here</strong>
+          <span>or click to choose a file (JPG or PNG)</span>
+        </div>
+        <div id="scanline" class="scanline" hidden></div>
+      </div>
+      <input id="fileInput" type="file" accept="image/png, image/jpeg" hidden />
+      <div class="actions">
+        <button id="analyzeBtn" class="btn primary" disabled>Analyze scan</button>
+        <button id="resetBtn" class="btn" disabled>Clear</button>
+      </div>
+    </section>
+
+    <!-- Right: results -->
+    <section class="results" aria-live="polite">
+      <p id="status" class="status">Loading model…</p>
+
+      <div id="resultPanel" hidden>
+        <p class="label">Most likely category</p>
+        <h2 id="topClass">–</h2>
+        <p id="topConf" class="conf">–</p>
+        <p id="warning" class="warning" hidden></p>
+
+        <ul id="bars" class="bars"></ul>
+      </div>
+
+      <p class="disclaimer">
+        This tool is a student/research project and is not a medical device.
+        Do not use it to diagnose or make treatment decisions. Always have a
+        qualified radiologist review the scan.
+      </p>
+    </section>
+  </main>
+
+  <!-- NeuroScan Application Script -->
+  <script src="script.js"></script>
+</body>
+</html>
