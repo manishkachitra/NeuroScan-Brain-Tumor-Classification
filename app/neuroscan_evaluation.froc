@@ -1,0 +1,36 @@
+# =====================================================================
+# NEUROSCAN - BRAIN TUMOR MRI CLASSIFICATION
+# FREE-RESPONSE RECEIVER OPERATING CHARACTERISTIC (FROC) EVALUATION FILE
+# =====================================================================
+# Model Architecture : MobileNetV2 with Transfer Learning
+# Target Classes     : 4 (glioma_tumor, meningioma_tumor, no_tumor, pituitary_tumor)
+# Total Test Scans   : 394 MRI Images
+# Overall Test Acc   : 75.89%
+# Best Val Acc       : 98.84%
+# =====================================================================
+
+[CLASS_PERFORMANCE]
+# Class, Support, Precision, Recall/Sensitivity, Specificity, F1-Score, AUC
+glioma_tumor,100,1.0000,0.3400,1.0000,0.5075,0.8920
+meningioma_tumor,115,0.6845,1.0000,0.8351,0.8127,0.9415
+no_tumor,105,0.7192,1.0000,0.8581,0.8367,0.9530
+pituitary_tumor,74,0.9783,0.6081,0.9938,0.7500,0.9180
+
+[SUMMARY_METRICS]
+macro_avg_auc=0.9261
+test_accuracy=0.7589
+macro_f1=0.7267
+
+[FROC_OPERATING_POINTS]
+# Threshold, FPPI, Mean_Sensitivity, Glioma_Sens, Meningioma_Sens, NoTumor_Sens, Pituitary_Sens
+0.05,0.852,0.985,0.940,1.000,1.000,1.000
+0.10,0.620,0.962,0.890,1.000,1.000,0.959
+0.20,0.415,0.924,0.780,1.000,1.000,0.919
+0.30,0.310,0.886,0.670,1.000,1.000,0.878
+0.40,0.228,0.838,0.520,1.000,1.000,0.838
+0.50,0.165,0.737,0.340,1.000,1.000,0.608
+0.60,0.112,0.670,0.240,0.983,0.962,0.495
+0.70,0.068,0.574,0.160,0.930,0.895,0.311
+0.80,0.035,0.437,0.090,0.826,0.733,0.108
+0.90,0.012,0.261,0.040,0.583,0.420,0.000
+0.95,0.005,0.142,0.010,0.374,0.185,0.000
